@@ -1,2 +1,5 @@
+Testnet : Rinkeby Test Network(ID#4)
+Address: "0x21A0184bA8026669E00Cd0412D4541A7429F119A"
+
 Testnet : Kovan Test Network(ID#42)
 Address: "0x84df4cb004fc0fc8e5b96c6b28094354112ccf78"
