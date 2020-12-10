@@ -16,12 +16,8 @@ contract('Marketplace',([deployer,seller,buyer]) => {
     describe('Deployment', async () =>{
 
         it('deployed successfully', async() =>{
-            
         const address = await marketplace.address
 
-        assert.notEqual(address,0x0)
-        assert.notEqual(address,null)
-        assert.notEqual(address,'')
     })
         it('Has a name', async () =>{
             const name=await marketplace.name()
@@ -32,6 +28,25 @@ contract('Marketplace',([deployer,seller,buyer]) => {
             const address = await marketplace.address
          
             assert.notEqual(address,undefined)
+        })
+
+
+        it('Address is not equal to zero', async () =>{
+            const address = await marketplace.address
+         
+            assert.notEqual(address,0x0)
+        })
+		
+		it('Address is not equal to null', async () =>{
+            const address = await marketplace.address
+         
+             assert.notEqual(address,null)
+        })
+		
+		it('Address is not Blank', async () =>{
+            const address = await marketplace.address
+         
+             assert.notEqual(address,'')
         })
 
     })

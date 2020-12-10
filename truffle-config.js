@@ -33,5 +33,9 @@ module.exports = {
       version: "0.7.0"
     }
   },
-  
+  plugins: ["solidity-coverage"],
+  mocha: {
+    reporter: 'eth-gas-reporter',
+    //reporterOptions : { ... } // See options below
+  }
 }

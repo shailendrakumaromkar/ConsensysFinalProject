@@ -1,16 +1,17 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity 0.7.0;
 
 /// @title Marketplace
 /// @author Shailendra Kumar Omkar
 /// @notice You can use this contract for creating & purchasing Products
 /// @dev All function calls are currently implemented without side effects
-contract Marketplace {
+contract Marketplace  {
 
   /// @notice It keeps the counter track of Product which are added
   /// @dev Initializing with zero
     uint public productCount=0;
-
+  
   ///DApp Name
   string public name;
   /// Create a struct named Product.
@@ -50,8 +51,14 @@ event ProductPurchased(
         bool purchased
     );
    
+// modifier onlyAdmin() {
+//   require(msg.sender == contractOwner);
+//   _;
+// }
 
    constructor() {
+     /*Initialsing DApp Name in constructor
+     */
         name="Consensys Marketplace";
     }
 
@@ -91,10 +98,8 @@ event ProductPurchased(
     _product.purchased = true;
     products[_id] = _product;
 
-    //address payable(seller).transfer(msg.value);
-    //address(seller).call{value:msg.value};
     seller.transfer(msg.value);
-
+    // seller.call{value:msg.value};
     emit ProductPurchased(_id,_product.name,_product.price,msg.sender,true);
     }
 }
