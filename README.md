@@ -63,6 +63,17 @@ Decentralised Marketplace is the online platform that runs on the Ethereum Block
 4. Otherwise you can select the provided Javascript VM.
 
 ## :ballot_box_with_check: Code Coverage report
+$ npm install --save-dev solidity-coverage
+
+Add this package to your plugins array in truffle-config.js (Truffle docs)
+
+module.exports = {
+  networks: {...},
+  plugins: ["solidity-coverage"]
+}
+
+**Run**
+$ truffle run coverage
 Below is the code coverage report of smart contract
 
 ![Code Coverage Report](https://user-images.githubusercontent.com/19868756/101682116-38a1f200-3a89-11eb-8e6f-e137f90c91b3.jpg)
@@ -70,6 +81,19 @@ Below is the code coverage report of smart contract
 
 ## :white_check_mark: Testing
 You can run the tests by running truffle test from the Project directory
+
+**eth-gas-reporter**: Gas usage per unit test
+npm install --save-dev eth-gas-reporter
+
+/* truffle-config.js */
+module.exports = {
+  networks: { ... },
+  mocha: {
+    reporter: 'eth-gas-reporter',
+  }
+};
+
+truffle test
 
 ![Test Result](https://user-images.githubusercontent.com/19868756/101682164-48b9d180-3a89-11eb-87be-d15ec037c5b6.jpg)
 

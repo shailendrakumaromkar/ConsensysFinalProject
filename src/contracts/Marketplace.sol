@@ -8,10 +8,31 @@ pragma solidity 0.7.0;
 /// @dev All function calls are currently implemented without side effects
 contract Marketplace  {
 
+address private owner;
+ bool private stopped = false;
+ /**
+  @dev Checks if the contract is not stopped; reverts if it is.
+  */
+  modifier isNotStopped {
+    require(!stopped, 'Contract is stopped.');
+    _;
+  }
+
+modifier isAdmin() {
+    require(msg.sender == owner);
+    _;
+}
+
+
+function toggleContractStopped() isAdmin public {
+      stopped = !stopped;
+  }
+
+
   /// @notice It keeps the counter track of Product which are added
   /// @dev Initializing with zero
     uint public productCount=0;
-  
+
   ///DApp Name
   string public name;
   /// Create a struct named Product.
@@ -56,7 +77,7 @@ event ProductPurchased(
 //   _;
 // }
 
-   constructor() {
+   constructor() public {
      /*Initialsing DApp Name in constructor
      */
         name="Consensys Marketplace";

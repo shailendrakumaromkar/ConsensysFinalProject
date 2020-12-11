@@ -25,6 +25,8 @@ module.exports = {
       skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
     },
   },
+
+
   
   contracts_directory: './src/contracts/',
   contracts_build_directory: './src/abis/',
