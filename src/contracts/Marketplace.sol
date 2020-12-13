@@ -16,32 +16,34 @@ contract Marketplace  {
   string public name;
 
 /// Declaring owner of smart contract
-  address public owner;
+  address payable public owner;
 
-///Flag use for circuit-break  
+///Flag use for circuit-breaker  
   bool public paused = false;
 
 ///Modifier to check correct owner
 modifier isAdmin() {
-    require(msg.sender == owner, "Only Owner");
+    require(msg.sender == owner, "Only Owner can call this function");
     _;
 }
 
 ///Modifier to Check contract is Paused
 modifier notPaused {
-        require(
-            paused == false,
-            "Contract is Paused"
-        );
+        require(paused == false,"This Contract is Paused by Admin");
         _;
     }
 
 /// @notice Pause the contract in case of emergency.
-    function togglePause() public isAdmin {
-        //require(msg.sender == owner, "Only Owner");
+    function togglePause() public isAdmin returns (bool){
         paused = !paused;
+        return true;
     }
 
+/// @notice Shutdown the Contract
+/// @dev It will validate only Admin can call this function
+ function shutDownContract() public isAdmin {
+    selfdestruct(owner);
+}
 
  /// Create a struct named Product.
  /// It contain Product details -  id, name, price, owner, purchased
@@ -114,10 +116,10 @@ event ProductPurchased(
 
     address payable seller = _product.owner;
 
-    require(_product.id > 0 && _product.id <= productCount);
-    require((msg.value >= _product.price));
-    require(!_product.purchased);
-    require(seller != msg.sender);
+    require(_product.id > 0 && _product.id <= productCount,"Product Id should be valid between 1 & total product count");
+    require((msg.value >= _product.price),"Buyer should have sufficient balance to purchase product");
+    require(!_product.purchased,"Product is already not purchased by Buyer");
+    require(seller != msg.sender,"Buyer is not same as seller");
 
 
     _product.owner = msg.sender;
@@ -125,7 +127,7 @@ event ProductPurchased(
     products[_id] = _product;
 
     seller.transfer(msg.value);
-    
+
     emit ProductPurchased(_id,_product.name,_product.price,msg.sender,true);
     }
 }
