@@ -2,11 +2,15 @@
 
 pragma solidity 0.7.0;
 
+import "./Owner.sol";
+import "./Circuit_Breaker.sol";
+import "./Mortal.sol";
+
 /// @title Marketplace
 /// @author Shailendra Kumar Omkar
 /// @notice You can use this contract for creating & purchasing Products
 /// @dev All function calls are currently implemented without side effects
-contract Marketplace  {
+contract Marketplace is Owner, Circuit_Breaker, Mortal{
 
 /// @notice It keeps the counter track of Product which are added
 /// @dev Initializing with zero
@@ -14,36 +18,6 @@ contract Marketplace  {
 
 ///DApp Name
   string public name;
-
-/// Declaring owner of smart contract
-  address payable public owner;
-
-///Flag use for circuit-breaker  
-  bool public paused = false;
-
-///Modifier to check correct owner
-modifier isAdmin() {
-    require(msg.sender == owner, "Only Owner can call this function");
-    _;
-}
-
-///Modifier to Check contract is Paused
-modifier notPaused {
-        require(paused == false,"This Contract is Paused by Admin");
-        _;
-    }
-
-/// @notice Pause the contract in case of emergency.
-    function togglePause() public isAdmin returns (bool){
-        paused = !paused;
-        return true;
-    }
-
-/// @notice Shutdown the Contract
-/// @dev It will validate only Admin can call this function
- function shutDownContract() public isAdmin {
-    selfdestruct(owner);
-}
 
  /// Create a struct named Product.
  /// It contain Product details -  id, name, price, owner, purchased

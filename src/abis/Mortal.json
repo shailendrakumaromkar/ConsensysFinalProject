@@ -1,0 +1,535 @@
+{
+  "contractName": "Mortal",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address payable",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "paused",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "togglePause",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "shutDownContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"shutDownContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"togglePause\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"shutDownContract()\":{\"details\":\"It will validate only Admin can call this function\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"owner()\":{\"notice\":\"Declaring owner of smart contract\"},\"paused()\":{\"notice\":\"Flag use for circuit-breaker  \"},\"shutDownContract()\":{\"notice\":\"Shutdown the Contract\"},\"togglePause()\":{\"notice\":\"Pause the contract in case of emergency.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Mortal.sol\":\"Mortal\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Circuit_Breaker.sol\":{\"keccak256\":\"0x0e42bc185059faf6ef80d96264a3b2a694c3ea367e06ebb6e2aaf7de158558ac\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e6374415ae45be9079e5e8f593cddfb239c6585099983f30faae92e9460e016f\",\"dweb:/ipfs/QmVJSKX3UgSGvjiA1eXbcqwBCBhR8hxwSj39Y7GcbSCuUY\"]},\"/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Mortal.sol\":{\"keccak256\":\"0x4d873988aebfaf8521645c33eefd9b290bbbfe9729561a09c0361a9dc99f2a1a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e6d773bc854a622359b25da84d13be04942c57138bec74bcc3b596544ec9c722\",\"dweb:/ipfs/QmURej6ig2R72Ljoc47fnpEDW3gYk48VtKHwKqkfKSMnpU\"]},\"/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Owner.sol\":{\"keccak256\":\"0x9f92c5cc78fcdb08c2f03adfdde2dff85e5ef7f3e8030c5bc74236e1c1ab1389\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f91d64c0d0fe0fb2e75bc54f233e79b9e32bc2f29a1d3bf589ede0a6f7b8ccc4\",\"dweb:/ipfs/QmUBNR3qudwTsTxcrFNyugLpZ7ao6qhXzTujaCiiuf9s8P\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008060146101000a81548160ff02191690831515021790555034801561002a57600080fd5b506103128061003a6000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80635c975abb1461005157806366e1478c146100715780638da5cb5b1461007b578063c4ae3168146100af575b600080fd5b6100596100cf565b60405180821515815260200191505060405180910390f35b6100796100e2565b005b6100836101bf565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b76101e3565b60405180821515815260200191505060405180910390f35b600060149054906101000a900460ff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610186576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001806102bc6021913960400191505060405180910390fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461028a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001806102bc6021913960400191505060405180910390fd5b600060149054906101000a900460ff1615600060146101000a81548160ff021916908315150217905550600190509056fe4f6e6c79204f776e65722063616e2063616c6c20746869732066756e6374696f6ea2646970667358221220cfa90f25ec7343ac8b07935a40b4928aa40e235400fa5110f2c3c7a7aac19f4b64736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80635c975abb1461005157806366e1478c146100715780638da5cb5b1461007b578063c4ae3168146100af575b600080fd5b6100596100cf565b60405180821515815260200191505060405180910390f35b6100796100e2565b005b6100836101bf565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100b76101e3565b60405180821515815260200191505060405180910390f35b600060149054906101000a900460ff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614610186576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001806102bc6021913960400191505060405180910390fd5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16ff5b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461028a576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260218152602001806102bc6021913960400191505060405180910390fd5b600060149054906101000a900460ff1615600060146101000a81548160ff021916908315150217905550600190509056fe4f6e6c79204f776e65722063616e2063616c6c20746869732066756e6374696f6ea2646970667358221220cfa90f25ec7343ac8b07935a40b4928aa40e235400fa5110f2c3c7a7aac19f4b64736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "119:222:3:-:0;;;183:5:0;162:26;;;;;;;;;;;;;;;;;;;;119:222:3;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "119:222:3:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;162:26:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;263:73:3;;;:::i;:::-;;126:28:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;405:109:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;162:26;;;;;;;;;;;;;:::o;263:73:3:-;245:5:4;;;;;;;;;;231:19;;:10;:19;;;223:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;326:5:3::1;::::0;::::1;;;;;;;;313:19;;;126:28:4::0;;;;;;;;;;;;:::o;405:109:0:-;452:4;245:5:4;;;;;;;;;;;231:19;;:10;:19;;;223:65;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;478:6:0::1;;;;;;;;;;;477:7;468:6;;:16;;;;;;;;;;;;;;;;;;502:4;495:11;;405:109:::0;:::o",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity 0.7.0;\r\n\r\nimport \"./Owner.sol\";\r\nimport \"./Circuit_Breaker.sol\";\r\n\r\ncontract Mortal is Owner, Circuit_Breaker {\r\n\r\n/// @notice Shutdown the Contract\r\n/// @dev It will validate only Admin can call this function\r\n function shutDownContract() public isAdmin {\r\n    selfdestruct(owner);\r\n}\r\n\r\n}",
+  "sourcePath": "C:\\Users\\Neha\\Desktop\\Omkar\\Blockchain\\ConsensysFinalProject\\Marketplace\\src\\contracts\\Mortal.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Mortal.sol",
+    "exportedSymbols": {
+      "Mortal": [
+        314
+      ]
+    },
+    "id": 315,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 296,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:3"
+      },
+      {
+        "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Owner.sol",
+        "file": "./Owner.sol",
+        "id": 297,
+        "nodeType": "ImportDirective",
+        "scope": 315,
+        "sourceUnit": 334,
+        "src": "61:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Circuit_Breaker.sol",
+        "file": "./Circuit_Breaker.sol",
+        "id": 298,
+        "nodeType": "ImportDirective",
+        "scope": 315,
+        "sourceUnit": 38,
+        "src": "84:31:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 299,
+              "name": "Owner",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 333,
+              "src": "138:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owner_$333",
+                "typeString": "contract Owner"
+              }
+            },
+            "id": 300,
+            "nodeType": "InheritanceSpecifier",
+            "src": "138:5:3"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 301,
+              "name": "Circuit_Breaker",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 37,
+              "src": "145:15:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Circuit_Breaker_$37",
+                "typeString": "contract Circuit_Breaker"
+              }
+            },
+            "id": 302,
+            "nodeType": "InheritanceSpecifier",
+            "src": "145:15:3"
+          }
+        ],
+        "contractDependencies": [
+          37,
+          333
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 314,
+        "linearizedBaseContracts": [
+          314,
+          37,
+          333
+        ],
+        "name": "Mortal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 312,
+              "nodeType": "Block",
+              "src": "306:30:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 309,
+                        "name": "owner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 319,
+                        "src": "326:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 308,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -21,
+                      "src": "313:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 310,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "313:19:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 311,
+                  "nodeType": "ExpressionStatement",
+                  "src": "313:19:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 303,
+              "nodeType": "StructuredDocumentation",
+              "src": "166:94:3",
+              "text": "@notice Shutdown the Contract\n @dev It will validate only Admin can call this function"
+            },
+            "functionSelector": "66e1478c",
+            "id": 313,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 306,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 305,
+                  "name": "isAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 332,
+                  "src": "298:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "298:7:3"
+              }
+            ],
+            "name": "shutDownContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "288:2:3"
+            },
+            "returnParameters": {
+              "id": 307,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "306:0:3"
+            },
+            "scope": 314,
+            "src": "263:73:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 315,
+        "src": "119:222:3"
+      }
+    ],
+    "src": "35:306:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Mortal.sol",
+    "exportedSymbols": {
+      "Mortal": [
+        314
+      ]
+    },
+    "id": 315,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 296,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:3"
+      },
+      {
+        "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Owner.sol",
+        "file": "./Owner.sol",
+        "id": 297,
+        "nodeType": "ImportDirective",
+        "scope": 315,
+        "sourceUnit": 334,
+        "src": "61:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/C/Users/Neha/Desktop/Omkar/Blockchain/ConsensysFinalProject/Marketplace/src/contracts/Circuit_Breaker.sol",
+        "file": "./Circuit_Breaker.sol",
+        "id": 298,
+        "nodeType": "ImportDirective",
+        "scope": 315,
+        "sourceUnit": 38,
+        "src": "84:31:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 299,
+              "name": "Owner",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 333,
+              "src": "138:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Owner_$333",
+                "typeString": "contract Owner"
+              }
+            },
+            "id": 300,
+            "nodeType": "InheritanceSpecifier",
+            "src": "138:5:3"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 301,
+              "name": "Circuit_Breaker",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 37,
+              "src": "145:15:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Circuit_Breaker_$37",
+                "typeString": "contract Circuit_Breaker"
+              }
+            },
+            "id": 302,
+            "nodeType": "InheritanceSpecifier",
+            "src": "145:15:3"
+          }
+        ],
+        "contractDependencies": [
+          37,
+          333
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 314,
+        "linearizedBaseContracts": [
+          314,
+          37,
+          333
+        ],
+        "name": "Mortal",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 312,
+              "nodeType": "Block",
+              "src": "306:30:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 309,
+                        "name": "owner",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 319,
+                        "src": "326:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 308,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -21,
+                      "src": "313:12:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 310,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "313:19:3",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 311,
+                  "nodeType": "ExpressionStatement",
+                  "src": "313:19:3"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 303,
+              "nodeType": "StructuredDocumentation",
+              "src": "166:94:3",
+              "text": "@notice Shutdown the Contract\n @dev It will validate only Admin can call this function"
+            },
+            "functionSelector": "66e1478c",
+            "id": 313,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 306,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 305,
+                  "name": "isAdmin",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 332,
+                  "src": "298:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "298:7:3"
+              }
+            ],
+            "name": "shutDownContract",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 304,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "288:2:3"
+            },
+            "returnParameters": {
+              "id": 307,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "306:0:3"
+            },
+            "scope": 314,
+            "src": "263:73:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 315,
+        "src": "119:222:3"
+      }
+    ],
+    "src": "35:306:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.5",
+  "updatedAt": "2020-12-13T23:37:01.225Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "shutDownContract()": {
+        "details": "It will validate only Admin can call this function"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "owner()": {
+        "notice": "Declaring owner of smart contract"
+      },
+      "paused()": {
+        "notice": "Flag use for circuit-breaker  "
+      },
+      "shutDownContract()": {
+        "notice": "Shutdown the Contract"
+      },
+      "togglePause()": {
+        "notice": "Pause the contract in case of emergency."
+      }
+    },
+    "version": 1
+  }
+}

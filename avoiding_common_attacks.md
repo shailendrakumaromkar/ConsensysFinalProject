@@ -9,12 +9,14 @@ Used msg.sender
 ## An outdated compiler version is used
 Used latest version of solidity V 0.7.0
 
+## Forcibly Sending Ether to a Contract
+This smart contract can receive ether as Mortal has been used
+
 ## Transaction-Ordering Dependence
-program logic does not affected by transactions order
+This smart contract logic does not affected by transactions order
 
 ## Timestamp Dependence
-program logic does not depende on block timestamp
-
+This smart contract logic does not depende on block timestamp
 
 ## DoS with Block Gas Limit
 no unknown size loop

@@ -83,7 +83,8 @@ truffle run coverage [command-options]
 
 Below is the code coverage report of smart contract
 
-![Code Coverage Report](https://user-images.githubusercontent.com/19868756/101682116-38a1f200-3a89-11eb-8e6f-e137f90c91b3.jpg)
+<!--![Code Coverage Report](https://user-images.githubusercontent.com/19868756/101682116-38a1f200-3a89-11eb-8e6f-e137f90c91b3.jpg) -->
+![Coverage_14dec](https://user-images.githubusercontent.com/19868756/102027264-efbfa580-3dc8-11eb-9975-31e5063c85db.jpg)
 
 
 ## :white_check_mark: Testing
