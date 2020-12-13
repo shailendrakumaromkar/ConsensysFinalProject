@@ -2,4 +2,7 @@
 Address: "0x21A0184bA8026669E00Cd0412D4541A7429F119A"
 
 ## Testnet : Kovan Test Network(ID#42)
-Address: "0x84df4cb004fc0fc8e5b96c6b28094354112ccf78"
+Address: "0xd29De4c1739C8D3A01Cc0DB3960c1689D46C3d88"
+
+## Testnet : Ropsten Test Network(ID#3)
+Address: "0xA975a9379a1Bd5a674F29fD4607eace6002DEBAa"

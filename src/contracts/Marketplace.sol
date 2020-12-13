@@ -66,7 +66,7 @@ event ProductPurchased(
    constructor() {
      /*Initialsing DApp Name in constructor
      */
-        owner == msg.sender;
+        owner = msg.sender;
         name="Consensys Marketplace";
     }
 
