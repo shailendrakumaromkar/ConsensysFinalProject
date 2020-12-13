@@ -9,25 +9,11 @@ pragma solidity 0.7.0;
 contract Marketplace  {
 
 address private owner;
- bool private stopped = false;
- /**
-  @dev Checks if the contract is not stopped; reverts if it is.
-  */
-  modifier isNotStopped {
-    require(!stopped, 'Contract is stopped.');
-    _;
-  }
 
 modifier isAdmin() {
     require(msg.sender == owner);
     _;
 }
-
-
-function toggleContractStopped() isAdmin public {
-      stopped = !stopped;
-  }
-
 
   /// @notice It keeps the counter track of Product which are added
   /// @dev Initializing with zero
@@ -77,9 +63,10 @@ event ProductPurchased(
 //   _;
 // }
 
-   constructor() public {
+   constructor() {
      /*Initialsing DApp Name in constructor
      */
+        owner == msg.sender;
         name="Consensys Marketplace";
     }
 
