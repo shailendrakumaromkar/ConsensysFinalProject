@@ -15,35 +15,35 @@ contract('Marketplace',([deployer,seller,buyer]) => {
 
     describe('Deployment', async () =>{
 
-        it('deployed successfully', async() =>{
+        it('DApp is deployed successfully', async() =>{
         const address = await marketplace.address
 
     })
-        it('Has a name', async () =>{
+        it('DApp Has a name', async () =>{
             const name=await marketplace.name()
             assert.equal(name,'Consensys Marketplace')
         })
 
-        it('Address is not undefined', async () =>{
+        it('Deployed Address is not undefined', async () =>{
             const address = await marketplace.address
          
             assert.notEqual(address,undefined)
         })
 
 
-        it('Address is not equal to zero', async () =>{
+        it('Deployed Address is not equal to zero', async () =>{
             const address = await marketplace.address
          
             assert.notEqual(address,0x0)
         })
 		
-		it('Address is not equal to null', async () =>{
+		it('Deployed Address is not equal to null', async () =>{
             const address = await marketplace.address
          
              assert.notEqual(address,null)
         })
 		
-		it('Address is not Blank', async () =>{
+		it('Deployed Address is not Blank', async () =>{
             const address = await marketplace.address
          
              assert.notEqual(address,'')
@@ -60,7 +60,7 @@ contract('Marketplace',([deployer,seller,buyer]) => {
            productCount = await marketplace.productCount()
         })
 
-        it('creates product', async () =>{
+        it('creates a new product with name & price in ETH', async () =>{
            assert.equal(productCount,1)
            //console.log(result.logs)
 
@@ -78,7 +78,7 @@ contract('Marketplace',([deployer,seller,buyer]) => {
 
         })
 
-        it('list product', async () =>{
+        it('list all the products', async () =>{
             const product= await marketplace.products(productCount)
 
            assert.equal(product.id.toNumber(),productCount.toNumber(),'Id is correct')
@@ -88,7 +88,7 @@ contract('Marketplace',([deployer,seller,buyer]) => {
            assert.equal(product.purchased,false,'purchased is correct')
         })
 
-        it('sells product', async () => {
+        it('sells a product to buyer', async () => {
 
             //check seller balance
 

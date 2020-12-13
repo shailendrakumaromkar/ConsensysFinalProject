@@ -8,21 +8,43 @@ pragma solidity 0.7.0;
 /// @dev All function calls are currently implemented without side effects
 contract Marketplace  {
 
-address private owner;
+/// @notice It keeps the counter track of Product which are added
+/// @dev Initializing with zero
+    uint public productCount=0;
 
+///DApp Name
+  string public name;
+
+/// Declaring owner of smart contract
+  address public owner;
+
+///Flag use for circuit-break  
+  bool public paused = false;
+
+///Modifier to check correct owner
 modifier isAdmin() {
-    require(msg.sender == owner);
+    require(msg.sender == owner, "Only Owner");
     _;
 }
 
-  /// @notice It keeps the counter track of Product which are added
-  /// @dev Initializing with zero
-    uint public productCount=0;
+///Modifier to Check contract is Paused
+modifier notPaused {
+        require(
+            paused == false,
+            "Contract is Paused"
+        );
+        _;
+    }
 
-  ///DApp Name
-  string public name;
-  /// Create a struct named Product.
-  /// It contain Product details -  id, name, price, owner, purchased
+/// @notice Pause the contract in case of emergency.
+    function togglePause() public isAdmin {
+        //require(msg.sender == owner, "Only Owner");
+        paused = !paused;
+    }
+
+
+ /// Create a struct named Product.
+ /// It contain Product details -  id, name, price, owner, purchased
     struct Product{
         uint id;
         string name;
@@ -58,14 +80,10 @@ event ProductPurchased(
         bool purchased
     );
    
-// modifier onlyAdmin() {
-//   require(msg.sender == contractOwner);
-//   _;
-// }
-
-   constructor() {
-     /*Initialsing DApp Name in constructor
+   /*Initialsing DApp Name & owner in constructor
      */
+   constructor() {
+     
         owner = msg.sender;
         name="Consensys Marketplace";
     }
@@ -73,7 +91,7 @@ event ProductPurchased(
   /// @notice Creating a Product
   /// @dev It will validate Product Name length & Product Price value
  /// @param _name Product Name  _price Product Price
-    function createProduct(string memory _name, uint _price) public {
+    function createProduct(string memory _name, uint _price) public notPaused  {
       
         require(bytes(_name).length>0 ,"Product Name should be a valid name of length greater than zero");
         require(_price >0,"Product Price must be greater than zero");
@@ -91,7 +109,7 @@ event ProductPurchased(
    ///      Product is not already purchased
    ///      Buyer is not same as seller
    /// @param _id product ID
-    function purchaseProduct(uint _id) public payable{
+    function purchaseProduct(uint _id) public payable notPaused {
     Product memory _product = products[_id];
 
     address payable seller = _product.owner;
@@ -107,7 +125,7 @@ event ProductPurchased(
     products[_id] = _product;
 
     seller.transfer(msg.value);
-    // seller.call{value:msg.value};
+    
     emit ProductPurchased(_id,_product.name,_product.price,msg.sender,true);
     }
 }
