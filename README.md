@@ -40,7 +40,7 @@ Your Project Should:
 
 #### IPFS Deployment
 - https://wild-bird-2114.on.fleek.co/ : Connect your Metamask wallet in either of Kovan, Rinkeby, Ropsten Test Network. :heavy_check_mark:
-- https://ipfs.fleek.co/ipfs/QmPatAWRB2QREX8Z9dFAf1CDVJCq7JseepzSdjUFtxkYXR/
+- https://ipfs.fleek.co/ipfs/QmPatAWRB2QREX8Z9dFAf1CDVJCq7JseepzSdjUFtxkYXR/ :heavy_check_mark:
 
 ##  :man_technologist: Technology Used:
 - Smart Contract & Business logic - Solidity V0.7.0
