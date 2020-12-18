@@ -13,4 +13,8 @@ modifier isAdmin() {
     _;
 }
 
+constructor () {
+  owner = msg.sender;
+}
+
 }

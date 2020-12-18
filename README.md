@@ -2,8 +2,11 @@
 
 ## :bulb: About: 
 Decentralised Marketplace is the online platform that runs on the Ethereum Blockchain Architecture (ETH 1.0) where 
-1. Seller can add new Products & their prices. 
+1. Seller can add new Products & their prices in Ether. 
 2. Buyer can purchase them by paying the Product price in cryptocurrency using ETH to Seller.
+3. Buyer & Seller cannot be same.
+4. Validation/Check to ensure Transaction integrity is maintained.
+5. Win-Win situation for both Seller, Buyer.
 
 ## Final DApp
 Below is the final Marketplace DApp
@@ -39,26 +42,28 @@ Your Project Should:
 6. A screen recording walking through your Dapp. :heavy_check_mark: 
 
 #### IPFS Deployment
-- https://wild-bird-2114.on.fleek.co/ : Connect your Metamask wallet in either of Kovan, Rinkeby, Ropsten Test Network. :heavy_check_mark:
+- https://wild-bird-2114.on.fleek.co/ : Connect your Metamask wallet in either of Kovan, Rinkeby, Ropsten Test Network. 
+  DApp UI will be loaded :heavy_check_mark:
 - https://ipfs.fleek.co/ipfs/QmPatAWRB2QREX8Z9dFAf1CDVJCq7JseepzSdjUFtxkYXR/ :heavy_check_mark:
 
 ##  :man_technologist: Technology Used:
 - Smart Contract & Business logic - Solidity V0.7.0
-- Front End : React JS
+- Front End : React JS, HTML
 - Backend : web3.JS
 
 
 ## :gear: Setting Up for Development
 1. Clone the repo using git clone https://github.com/shailendrakumaromkar/ConsensysFinalProject
-2. Create directory DApp_Marketplace & cd DApp_Marketplace directory and clone the client repo using git clone https://github.com/shailendrakumaromkar/ConsensysFinalProject
-3. Navigate to the root of the working copy (where package.json is present).
-4. Run npm install -g npm This will install all necessary dependencies.
-5. Have a local blockchain running on port 9545 (e.g. using Ganache)
-6. Create .env file is not exist at Project root directory.
-7. In .env file give correct value as per your setup INFURA_PROJECT_ID = Project Id & MNEMONIC = "MNEMONIC".
-8. From the main project folder (DApp_Marketplace), deploy contracts with "truffle migrate --reset" to deploy local Blockchain.
-9. From the main project folder (DApp_Marketplace), deploy contracts with "truffle migrate --reset --network Kovan" to deploy Kovan Testnet.
-10. From the main project folder (DApp_Marketplace), deploy contracts with "truffle migrate --reset --network rinkeby" to deploy Rinkeby Testnet.
+2. Navigate to the root of the working copy (where package.json is present).
+3. Run npm install, this will install all necessary dependencies.
+4. Have a local blockchain running on port 9545 (e.g. using Ganache)
+5. Create .env file at Project root directory.
+6. In .env file give correct value as per your profile i.e. from Infura for a particular testnet copy the Project ID & 
+   give value for INFURA_PROJECT_ID = Project Id & from Metamask wallet take the Mnemonic and give value for MNEMONIC = "MNEMONIC".
+7. From the Project root directory, deploy contracts with "truffle migrate --reset" to deploy local Blockchain.
+8. From the Project root directory, deploy contracts with "truffle migrate --reset --network Kovan" to deploy Kovan Testnet.
+9. From the Project root directory, deploy contracts with "truffle migrate --reset --network rinkeby" to deploy Rinkeby Testnet.
+10. From the Project root directory, deploy contracts with "truffle migrate --reset --network ropsten" to deploy Ropsten Testnet.
 
 
 ### :computer: Prerequisites
@@ -68,14 +73,13 @@ Your Project Should:
 - chai: 4.2.0,
 - react: 16.8.4,
 - web3: 1.0.0-beta.55
-
+- Metamask Chrome extension
 
 ### :ledger: Folder Structure
 ![Folder](https://user-images.githubusercontent.com/19868756/100525406-99f2d700-31e6-11eb-8675-4af07ccc5e97.jpg)
 
 ## :high_brightness:  To start the client:
-1. Navigate to the Project directory with cd DApp_Marketplace
-2. Run npm install and then npm run start
+1. Navigate to the Project directory and then enter npm run start
 3. Open up your browser and the project should be up on localhost:3000
 
 
@@ -84,18 +88,18 @@ Your Project Should:
 2. Ensure you have a local blockchain running (e.g. on Ganache)
 3. Select Localhost:9545 or Custom RPC depending on which port your Ganache blockchain is running on Interact with the web interface
 
-## :purple_circle: Contract interaction on Kovan/Rinkeby Testnet
+## :purple_circle: Contract interaction on Kovan/Rinkeby/Ropsten Testnet
 1. Ensure your browser has a plugin (e.g. Metamask) that allows you to interact with the Ethereum blockchain
-2. Select Kovan/Rinkeby Test Network and choose a Metamask account that has some testnet ether. You can obtain some Kovan testnet ether via https://faucet.kovan.network/ & Rinkeby via https://faucet.rinkeby.io/ to interact with the web interface
+2. Select Kovan/Rinkeby/Ropsten Test Network and choose a Metamask account that has some test ether. You can obtain some Kovan testnet ether via https://faucet.kovan.network/ , Rinkeby via https://faucet.rinkeby.io/ , Rosten via https://faucet.ropsten.be/to interact with the web interface
 3. Switch to any address let's say Seller address, Add a Product by giving Product Name & Product Price, confirm the Transaction.
-   New Product entry will be added.
+   New Product entry will be added with Buy button enabled.
 4. Switch to different address let's say Buyer address, click on Buy button, confirm the transaction.
    Against Purchased Product, Buy button will be disabled.
 
 ## :headphones: Contract interaction on Remix
-1. Create a new file on Remix and name it Marketplace.sol, paste the contents of Marketplace.sol from VS code
-2. Deploy the contracts on Remix and you should be good to go.
-3. If you have Ganache running, choose Web3 provider as your environment and connect to the port hosting the local blockchain (the default is http://localhost:9545). 
+1. Create a new file on Remix and name it Owner.sol, Circuit_Breaker.sol, Mortal.sol & Marketplace.sol, paste the contents from VS code in each individual .sol file.
+2. Deploy the contracts on Remix in sequence - Owner.sol, Circuit_Breaker.sol, Mortal.sol & Marketplace.sol and you should be good to go.
+3. If you have Ganache running, choose Web3 provider as your environment and connect to the port hosting the local blockchain (http://localhost:9545). 
 4. Otherwise you can select the provided Javascript VM.
 
 ## :ballot_box_with_check: Code Coverage report
@@ -114,7 +118,7 @@ module.exports = {
 
 **Run**
 ```
-truffle run coverage [command-options]
+truffle run coverage
 ```
 
 Below is the code coverage report of smart contract
@@ -134,7 +138,7 @@ npm install --save-dev eth-gas-reporter
 
 ```
 /* truffle-config.js */
-module.exports = {
+module.exports = {tr
   networks: { ... },
   mocha: {
     reporter: 'eth-gas-reporter',
@@ -148,7 +152,8 @@ truffle test
 
 ![eth-gas-reporter](https://user-images.githubusercontent.com/19868756/101955809-7f781f00-3c24-11eb-9810-7643f1f2154e.jpg)
 
-## :shield: Smart Contract Weakness Classification and Test Cases addressed in the Smart Contract
+## :shield: Smart Contract Weakness Classification and Test Cases
+Below are the SWC found & addressed in the Smart Contract
 1. [SWC-100](https://swcregistry.io/docs/SWC-100)
 2. [SWC-102](https://swcregistry.io/docs/SWC-102)
 3. [SWC-103](https://swcregistry.io/docs/SWC-103)
