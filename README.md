@@ -17,18 +17,18 @@ Your Project Should:
 #### Smart Contract
 1. Be a Truffle project :heavy_check_mark: 
 2. Have a smart contract(s) commented according to the specs which: :heavy_check_mark: 
- - Have a circuit breaker design pattern and at least one other design pattern in Module 10 Lesson 1 :heavy_check_mark: 
- - Have security features to protect against at least two attack vectors outlined in Module 9 Lesson 3 :heavy_check_mark: 
- - Use a library (SafeMath.sol, etc) or extend another contract :heavy_check_mark: 
+    - Have a circuit breaker design pattern and at least one other design pattern in Module 10 Lesson 1 :heavy_check_mark: 
+   - Have security features to protect against at least two attack vectors outlined in Module 9 Lesson 3 :heavy_check_mark: 
+   - Use a library (SafeMath.sol, etc) or extend another contract :heavy_check_mark: 
 3. Have at least 5 tests for each smart contract :heavy_check_mark: 
 4. Smart contract should be deployed to a testnet :heavy_check_mark: 
 
 #### Frontend
 1. Have a development server to serve the frontend interaction of the application locally (You should be able to visit a local URL and interact with the application) :heavy_check_mark: 
 2. Frontend should work with web3.js / ethers.js, Infura and MetaMask to: 
- - Recognize and display current MM account :heavy_check_mark: 
- - Sign transactions that change a deployed contract’s state using MetaMask :heavy_check_mark: 
- - Reflect the successful state change in the UI :heavy_check_mark: 
+   - Recognize and display current MM account :heavy_check_mark: 
+   - Sign transactions that change a deployed contract’s state using MetaMask :heavy_check_mark: 
+   - Reflect the successful state change in the UI :heavy_check_mark: 
 
 #### Git
 1. Be uploaded to its own Github repository :heavy_check_mark: 
@@ -39,7 +39,7 @@ Your Project Should:
 6. A screen recording walking through your Dapp. :heavy_check_mark: 
 
 #### IPFS Deployment
-- https://wild-bird-2114.on.fleek.co/
+- https://wild-bird-2114.on.fleek.co/ : Connect your Metamask wallet in either of Kovan, Rinkeby, Ropsten Test Network. :heavy_check_mark:
 - https://ipfs.fleek.co/ipfs/QmPatAWRB2QREX8Z9dFAf1CDVJCq7JseepzSdjUFtxkYXR/
 
 ##  :man_technologist: Technology Used:
