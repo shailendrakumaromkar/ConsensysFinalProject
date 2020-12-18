@@ -5,6 +5,10 @@ Decentralised Marketplace is the online platform that runs on the Ethereum Block
 1. Seller can add new Products & their prices. 
 2. Buyer can purchase them by paying the Product price in cryptocurrency using ETH to Seller.
 
+## Final DApp
+Below is the final Marketplace DApp
+![Final DApp](https://user-images.githubusercontent.com/19868756/102099468-52a75000-3e4e-11eb-8e24-3635e33f29d3.jpg)
+
 
 ##  :man_technologist: Technology Used:
 - Smart Contract & Business logic - Solidity V0.7.0
@@ -128,7 +132,3 @@ truffle test
 
 ## :lock: MythX Smart Contract Scan
 Only 2 Low level vulnerabilities has been detected & fixed. Report attached refer MythX Scan Report.pdf
-
-## :memo: Future Goals & TODOs
-- Serve the UI from IPFS
-- Add ENS capability to resolve human-readable names to Ethereum addresses
