@@ -11,6 +11,36 @@ Below is the final Marketplace DApp
 ![Final DApp 1](https://user-images.githubusercontent.com/19868756/102624211-b5a82800-4169-11eb-8b08-92e86bb38568.jpg)
 
 
+## Final Project One-Sheeter Checklist
+Your Project Should:
+
+#### Smart Contract
+1. Be a Truffle project :heavy_check_mark: 
+2. Have a smart contract(s) commented according to the specs which: :heavy_check_mark: 
+ - Have a circuit breaker design pattern and at least one other design pattern in Module 10 Lesson 1 :heavy_check_mark: 
+ - Have security features to protect against at least two attack vectors outlined in Module 9 Lesson 3 :heavy_check_mark: 
+ - Use a library (SafeMath.sol, etc) or extend another contract :heavy_check_mark: 
+3. Have at least 5 tests for each smart contract :heavy_check_mark: 
+4. Smart contract should be deployed to a testnet :heavy_check_mark: 
+
+#### Frontend
+1. Have a development server to serve the frontend interaction of the application locally (You should be able to visit a local URL and interact with the application) :heavy_check_mark: 
+2. Frontend should work with web3.js / ethers.js, Infura and MetaMask to: 
+ - Recognize and display current MM account :heavy_check_mark: 
+ - Sign transactions that change a deployed contract’s state using MetaMask :heavy_check_mark: 
+ - Reflect the successful state change in the UI :heavy_check_mark: 
+
+#### Git
+1. Be uploaded to its own Github repository :heavy_check_mark: 
+2. Have a README doc describing the overview of your project, pointing out directory structure and how to build and run your project locally
+3. A document called design_pattern_decisions.md explaining which design patterns you used AND :heavy_check_mark: 
+4. A document called avoiding_common_attacks.md explaining security steps you took what measures you took to ensure your contracts are not susceptible to common attacks :heavy_check_mark: 
+5. A document called deployed_addresses.txt that describes where your contracts live (testnet AND address). :heavy_check_mark: 
+6. A screen recording walking through your Dapp. :heavy_check_mark: 
+
+#### IPFS Deployment
+- https://wild-bird-2114.on.fleek.co/
+- https://ipfs.fleek.co/ipfs/QmPatAWRB2QREX8Z9dFAf1CDVJCq7JseepzSdjUFtxkYXR/
 
 ##  :man_technologist: Technology Used:
 - Smart Contract & Business logic - Solidity V0.7.0
