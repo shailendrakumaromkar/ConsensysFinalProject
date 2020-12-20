@@ -76,7 +76,7 @@ Your Project Should:
 - Metamask Chrome extension
 
 ### :ledger: Folder Structure
-![Folder](https://user-images.githubusercontent.com/19868756/100525406-99f2d700-31e6-11eb-8675-4af07ccc5e97.jpg)
+![Folder](https://user-images.githubusercontent.com/19868756/102708425-11d58e00-42c9-11eb-9861-ae7e5c90739d.jpg)
 
 ## :high_brightness:  To start the client:
 1. Navigate to the Project directory and then enter npm run start
