@@ -53,7 +53,7 @@ Your Project Should:
 
 
 ## :gear: Setting Up for Development
-1. Clone the repo using git clone https://github.com/shailendrakumaromkar/ConsensysFinalProject
+1. Clone the repo using git clone https://github.com/shailendrakumaromkar/ConsensysFinalProject.git
 2. Navigate to the root of the working copy (where package.json is present).
 3. Run npm install, this will install all necessary dependencies.
 4. Have a local blockchain running on port 9545 (e.g. using Ganache)
