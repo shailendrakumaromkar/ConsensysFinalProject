@@ -39,7 +39,7 @@ Your Project Should:
 3. A document called design_pattern_decisions.md explaining which design patterns you used AND :heavy_check_mark: 
 4. A document called avoiding_common_attacks.md explaining security steps you took what measures you took to ensure your contracts are not susceptible to common attacks :heavy_check_mark: 
 5. A document called deployed_addresses.txt that describes where your contracts live (testnet AND address). :heavy_check_mark: 
-6. A screen recording walking through your Dapp. :heavy_check_mark: 
+6. A screen recording walking through your Dapp.
 
 #### IPFS Deployment
 - https://wild-bird-2114.on.fleek.co/ : Connect your Metamask wallet in either of Kovan, Rinkeby, Ropsten Test Network. 
