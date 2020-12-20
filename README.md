@@ -15,7 +15,18 @@ Below is the final Marketplace DApp
 
 
 ## Final Project One-Sheeter Checklist
-Your Project Should:
+I have demonstrated below in Final Project :
+
+1. Technology - Ethereum Platform
+2. Programming Language - Solidity
+3. Frontend - ReactJS, HTML
+4. Backend - web3.JS
+5. Tools - Truffle, Remix, Ganache, VS Code
+6. Security tools, Audits - MythX
+7. Developement Best Practices - Code Coverage
+8. Testing - Javascript, eth-gas-reporter
+9. SWC Guidelines - https://swcregistry.io/
+10. DApp Demo - Covering end to end functionality
 
 #### Smart Contract
 1. Be a Truffle project :heavy_check_mark: 
