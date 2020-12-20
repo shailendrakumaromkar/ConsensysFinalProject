@@ -62,8 +62,8 @@ Your Project Should:
    give value for INFURA_PROJECT_ID = Project Id & from Metamask wallet take the Mnemonic and give value for MNEMONIC = "MNEMONIC".
 7. From the Project root directory, deploy contracts with "truffle migrate --reset" to deploy local Blockchain.
 8. From the Project root directory, deploy contracts with "truffle migrate --reset --network Kovan" to deploy kovan Testnet.
-9. From the Project root directory, deploy contracts with "truffle migrate --reset --network rinkeby" to deploy Rinkeby Testnet.
-10. From the Project root directory, deploy contracts with "truffle migrate --reset --network ropsten" to deploy Ropsten Testnet.
+9. From the Project root directory, deploy contracts with "truffle migrate --reset --network rinkeby" to deploy rinkeby Testnet.
+10. From the Project root directory, deploy contracts with "truffle migrate --reset --network ropsten" to deploy ropsten Testnet.
 
 
 ### :computer: Prerequisites
